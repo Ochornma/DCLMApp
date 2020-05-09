@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="org.dclm.live.ui.listen.RadioViewModel" />
+
+        <variable
+            name="state"
+            type="java.lang.Boolean" />
+
+        <variable
+            name="data"
+            type="org.dclm.live.ui.listen.SubTitle" />
+    </data>
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:background="#000"
+        android:gravity="bottom"
+        app:umanoDragView="@id/player_view"
+        app:umanoOverlay="true"
+        app:umanoPanelHeight="70dp"
+        app:umanoParallaxOffset="90dp"
+        app:umanoScrollableView="@id/recycler"
+        app:umanoShadowHeight="4dp"
+        tools:context=".ui.ondemand.audio.PodcastPlayFragment">
+
+
+        <LinearLayout
+            android:id="@+id/player_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000"
+            android:paddingBottom="70dp"
+            android:orientation="vertical">
+
+
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/player"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                app:auto_show="true"
+                app:buffered_color="#fff"
+                app:controller_layout_id="@layout/exo_player_control"
+                app:hide_on_touch="false"
+                app:show_buffering="when_playing"
+                app:show_timeout="0"
+                app:use_controller="true" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/drag_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:background="#B3FFFFFF"
+            android:backgroundTint="#B3FFFFFF"
+            android:focusable="false"
+            android:orientation="vertical"
+            tools:targetApi="lollipop">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/playlist"
+                    android:textColor="#000"
+                    android:paddingLeft="8dp"
+                    android:layout_margin="20dp"
+                    android:textSize="20sp"
+                    android:paddingStart="8dp"
+                    tools:ignore="RtlSymmetry" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/display_item" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+</layout>

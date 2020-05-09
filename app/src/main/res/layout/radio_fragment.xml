@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="org.dclm.live.ui.listen.RadioViewModel" />
+
+        <variable
+            name="state"
+            type="java.lang.Boolean"/>
+
+        <variable
+            name="data"
+            type="org.dclm.live.ui.listen.SubTitle" />
+    </data>
+    
+    
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000"
+    tools:context=".ui.listen.RadioFragment">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/select_language"
+        android:orientation="horizontal">
+        
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_keyboard_arrow"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"/>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:text="@string/select_language"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" 
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"/>
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:background="@drawable/background"
+        android:scaleType="centerCrop">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/image_view"
+            android:src="@drawable/nlogo"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical">
+        
+        <TextView
+            android:id="@+id/topic"
+            android:layout_marginBottom="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@={data.topic}"
+            android:layout_above="@+id/preacher"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:maxLines="1"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scrollHorizontally="true"
+            android:gravity="center_horizontal"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/preacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_centerInParent="true"
+            android:text="@={data.preacher}"
+            android:textColor="#A69D9D"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scrollHorizontally="true"
+            android:gravity="center_horizontal"
+            android:singleLine="true" />
+
+
+        <TextView
+            android:id="@+id/listeners"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@={data.listener}"
+            android:layout_below="@+id/preacher"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:layout_marginTop="2dp"
+            android:textAlignment="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scrollHorizontally="true"
+            android:gravity="center_horizontal"
+            android:singleLine="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="#192029">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_play"
+            android:onClick="@{() -> viewmodel.playPause(state)}"
+            android:background="@android:color/transparent"
+            android:layout_centerInParent="true"
+            android:id="@+id/play"/>
+
+        <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_skip_previous"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/play"
+        android:layout_marginRight="10dp"
+        android:id="@+id/previous"
+        android:layout_marginEnd="10dp"
+        android:layout_toStartOf="@+id/play"
+        android:background="@android:color/transparent"/>
+
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_skip_next"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/play"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/next"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/play"
+            android:background="@android:color/transparent"/>
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+</layout>

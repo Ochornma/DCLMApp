@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/homeFragment">
+
+    <fragment
+        android:id="@+id/subscribeFragment"
+        android:name="org.dclm.live.ui.subscribe.SubscribeFragment"
+        android:label="@string/menu_subscribe"
+        tools:layout="@layout/fragment_subscribe" />
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="org.dclm.live.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_watchFragment"
+            app:destination="@id/watchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_radioFragment"
+            app:destination="@id/radioFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_doctrineFragment"
+            app:destination="@id/doctrineFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_jotterFragment"
+            app:destination="@id/jotterFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_experienceFragment"
+            app:destination="@id/experienceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/blogFragment"
+        android:name="org.dclm.live.ui.blog.BlogFragment"
+        android:label="@string/blog"
+        tools:layout="@layout/blog_fragment">
+        <action
+            android:id="@+id/action_blogFragment_to_blogDetailFragment"
+            app:destination="@id/blogDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/connectFragment"
+        android:name="org.dclm.live.ui.connect.ConnectFragment"
+        android:label="@string/connect"
+        tools:layout="@layout/connect_fragment" />
+    <fragment
+        android:id="@+id/radioFragment"
+        android:name="org.dclm.live.ui.listen.RadioFragment"
+        android:label="@string/listen"
+        tools:layout="@layout/radio_fragment">
+        <action
+            android:id="@+id/action_radioFragment_to_languageSelection"
+            app:destination="@id/languageSelection" />
+        <argument
+            android:name="link"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="url"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/watchFragment"
+        android:name="org.dclm.live.ui.watch.WatchFragment"
+        android:label="@string/Watch"
+        tools:layout="@layout/watch_fragment" />
+    <fragment
+        android:id="@+id/doctrineFragment"
+        android:name="org.dclm.live.ui.doctrine.DoctrineFragment"
+        android:label="@string/doctrine"
+        tools:layout="@layout/doctrine_fragment">
+        <action
+            android:id="@+id/action_doctrineFragment_to_doctrineDetailFragment"
+            app:destination="@id/doctrineDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/jotterFragment"
+        android:name="org.dclm.live.ui.jotter.JotterFragment"
+        android:label="@string/jotter"
+        tools:layout="@layout/jotter_fragment">
+        <action
+            android:id="@+id/action_jotterFragment_to_addNoteFragment"
+            app:destination="@id/addNoteFragment" />
+        <action
+            android:id="@+id/action_jotterFragment_to_viewNoteFragment"
+            app:destination="@id/viewNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/experienceFragment"
+        android:name="org.dclm.live.ui.experience.ExperienceFragment"
+        android:label="@string/experience"
+        tools:layout="@layout/fragment_experience" >
+        <action
+            android:id="@+id/action_experienceFragment_to_shareExperienceFragment"
+            app:destination="@id/shareExperienceFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/languageSelection"
+        android:name="org.dclm.live.ui.LanguageSelection"
+        android:label="@string/select_language"
+        tools:layout="@layout/fragment_language">
+        <action
+            android:id="@+id/action_languageSelection_to_radioFragment"
+            app:destination="@id/radioFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/doctrineDetailFragment"
+        android:name="org.dclm.live.ui.doctrine.DoctrineDetailFragment"
+        android:label="@string/doctrine"
+        tools:layout="@layout/doctrine_detail_fragment">
+        <argument
+            android:name="heading"
+            app:argType="string" />
+        <argument
+            android:name="content"
+            app:argType="string" />
+        <argument
+            android:name="body"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/blogDetailFragment"
+        android:name="org.dclm.live.ui.blog.BlogDetailFragment"
+        android:label="@string/blog"
+        tools:layout="@layout/blog_detail_fragment">
+        <argument
+            android:name="body"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/giveFragment"
+        android:name="org.dclm.live.ui.give.GiveFragment"
+        android:label="@string/give"
+        tools:layout="@layout/give_fragment" />
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="org.dclm.live.ui.jotter.AddNoteFragment"
+        android:label="@string/jotter"
+        tools:layout="@layout/add_note_fragment">
+        <action
+            android:id="@+id/action_addNoteFragment_to_jotterFragment"
+            app:destination="@id/jotterFragment"
+            app:launchSingleTop="false"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="id"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="topic"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="date"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="speaker"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="reference"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="point1"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="point2"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="point3"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="point4"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="commitment"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="point1ref"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="point2ref"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="point3ref"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="point4ref"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="service"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewNoteFragment"
+        android:name="org.dclm.live.ui.jotter.ViewNoteFragment"
+        android:label="@string/jotter"
+        tools:layout="@layout/view_note_fragment">
+        <action
+            android:id="@+id/action_viewNoteFragment_to_addNoteFragment"
+            app:destination="@id/addNoteFragment"
+            app:popUpTo="@id/jotterFragment" />
+        <argument
+            android:name="id"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="topic"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="date"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="speaker"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="reference"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="point1"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="point2"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="point3"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="point4"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="commitment"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="point1ref"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="point2ref"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="point3ref"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="point4ref"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="service"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/podcastFragment"
+        android:name="org.dclm.live.ui.ondemand.audio.PodCastDisplayFragment"
+        android:label="@string/onDemand"
+        tools:layout="@layout/pod_cast_display_fragment">
+        <action
+            android:id="@+id/action_podCastDisplayFragment_to_podcastPlayFragment"
+            app:destination="@id/podcastPlayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/podcastPlayFragment"
+        android:name="org.dclm.live.ui.ondemand.audio.PodcastPlayFragment"
+        android:label="@string/onDemand"
+        tools:layout="@layout/podcast_play_fragment" >
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoDemandFragment"
+        android:name="org.dclm.live.ui.ondemand.video.VideoDemandFragment"
+        android:label="@string/video"
+        tools:layout="@layout/video_demand_fragment">
+        <action
+            android:id="@+id/action_videoDemandFragment_to_videoPlayFragment"
+            app:destination="@id/videoPlayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoPlayFragment"
+        android:name="org.dclm.live.ui.ondemand.video.VideoPlayFragment"
+        android:label="@string/video"
+        tools:layout="@layout/video_play_fragment">
+        <argument
+            android:name="state"
+            app:argType="string"
+            app:nullable="true" />
+        <!--<argument
+            android:name="podcast"
+            app:argType="org.dclm.live.ui.ondemand.OnDemand"
+            app:nullable="true"
+            android:defaultValue="@null" />-->
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="org.dclm.live.ui.ondemand.search.SearchFragment"
+        android:label="@string/search_message"
+        tools:layout="@layout/search_fragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_searchResultFragment"
+            app:destination="@id/searchResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchResultFragment"
+        android:name="org.dclm.live.ui.ondemand.search.SearchResultFragment"
+        tools:layout="@layout/search_result_fragment"
+        android:label="@string/search_message" >
+        <action
+            android:id="@+id/action_searchResultFragment_to_videoPlayFragment"
+            app:destination="@id/videoPlayFragment" />
+        <action
+            android:id="@+id/action_searchResultFragment_to_podcastPlayFragment"
+            app:destination="@id/podcastPlayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="org.dclm.live.ui.notification.NotificationFragment"
+        android:label="@string/notification"
+        tools:layout="@layout/notification_fragment" />
+    <fragment
+        android:id="@+id/shareExperienceFragment"
+        android:name="org.dclm.live.ui.experience.ShareExperienceFragment"
+        android:label="share_experience_fragment"
+        tools:layout="@layout/share_experience_fragment" >
+        <argument
+            android:name="experience"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_shareExperienceFragment_to_experienceFragment"
+            app:destination="@id/experienceFragment" />
+    </fragment>
+</navigation>

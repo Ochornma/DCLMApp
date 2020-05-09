@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="search"
+            type="org.dclm.live.ui.ondemand.search.Search" />
+
+    </data>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/search_item"
+    android:layout_marginBottom="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_margin="4dp"
+        android:id="@+id/title"
+        android:text="@={search.title}"
+        android:textColor="#fff"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_margin="4dp"
+        android:textStyle="italic"
+        android:text="@={search.subtitle}"
+        android:textColor="#fff"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/display">
+
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="25dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_mic"
+            android:scaleType="fitCenter"
+            android:layout_margin="4dp"
+            android:id="@+id/onDemand"/>
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="25dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_ondemand"
+            android:scaleType="fitCenter"
+            android:layout_margin="4dp"
+            android:id="@+id/video"/>
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="25dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_share"
+            android:layout_margin="4dp"
+            android:scaleType="fitCenter"
+            android:id="@+id/share"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="720p"
+            android:textColor="#fff"
+            android:textSize="12sp"
+            android:backgroundTint="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:layout_margin="4dp"
+            android:id="@+id/high"
+            tools:targetApi="lollipop" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="480p"
+            android:textColor="#fff"
+            android:textSize="12sp"
+            android:backgroundTint="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:layout_margin="4dp"
+            android:id="@+id/low"
+            tools:targetApi="lollipop" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="mp3"
+            android:textColor="#fff"
+            android:textSize="12sp"
+            android:backgroundTint="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:layout_margin="4dp"
+            android:id="@+id/audio"
+            tools:targetApi="lollipop" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:orientation="horizontal"
+        android:backgroundTint="#fff"
+        android:background="#fff"
+        tools:targetApi="lollipop" />
+
+</LinearLayout>
+</layout>

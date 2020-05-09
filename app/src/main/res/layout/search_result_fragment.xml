@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="org.dclm.live.ui.ondemand.search.SearchResultViewModel" />
+
+        <variable
+            name="progressbar"
+            type="android.widget.ProgressBar" />
+
+        <variable
+            name="editText"
+            type="android.widget.EditText" />
+
+        <variable
+            name="page"
+            type="java.lang.String" />
+
+        <variable
+            name="url"
+            type="java.lang.String" />
+
+        <variable
+            name="title"
+            type="java.lang.String" />
+
+        <variable
+            name="language"
+            type="java.lang.String" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.ondemand.search.SearchFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="#000"
+                android:hint="@string/search_by_title"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_margin="4dp"
+                android:id="@+id/search_text"
+                tools:ignore="ButtonStyle" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_margin="4dp"
+                android:background="#000"
+                android:onClick="@{() -> viewmodel.getTopicResult(page, progressbar, url, editText, language)}"
+                android:backgroundTint="#000"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:src="@drawable/ic_search"
+                android:id="@+id/search"
+                tools:ignore="ButtonStyle"
+                tools:targetApi="lollipop" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:id="@+id/progress_bar"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recycler_view"
+            tools:listitem="@layout/search_item"
+            android:background="#000"/>
+
+
+
+    </LinearLayout>
+</layout>

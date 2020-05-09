@@ -1,0 +1,2 @@
+rootProject.name='DCLM App'
+include ':app'

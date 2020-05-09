@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "362658606336",
+    "firebase_url": "https://dclm-radio.firebaseio.com",
+    "project_id": "dclm-radio",
+    "storage_bucket": "dclm-radio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362658606336:android:e78897a57563a1aeb417e5",
+        "android_client_info": {
+          "package_name": "org.dclm.live"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "362658606336-dgos2b4rp9u593itnutl4869glgabuba.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.dclm.live",
+            "certificate_hash": "2e0985ed8863285947fcb7cd807f185320624b7c"
+          }
+        },
+        {
+          "client_id": "362658606336-umlr88fl3fbeqle2p7p8oq4b0sdokd3v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOrZFQNbbf8CYARPo0sRWwta633DeBdAs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "362658606336-9vdbibdboeejcs62qfb6t1qqpvvgo2o9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

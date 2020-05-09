@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="@string/menu_home" />
+
+    <item
+        android:id="@+id/blogFragment"
+        android:icon="@drawable/ic_book"
+        android:title="@string/blog" />
+
+    <item
+        android:id="@+id/podcastFragment"
+        android:icon="@drawable/ic_mic"
+        android:title="@string/onDemand" />
+
+    <item
+        android:id="@+id/videoDemandFragment"
+        android:icon="@drawable/ic_ondemand"
+        android:title="@string/video" />
+
+    <item
+        android:id="@+id/connectFragment"
+        android:icon="@drawable/ic_connect"
+        android:title="@string/connect" />
+</menu>
